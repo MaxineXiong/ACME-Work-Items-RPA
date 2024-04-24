@@ -40,7 +40,10 @@ Constraints to follow in the development, using the **REFramework**:
 
 _You can check out the **automation demo video for the solution** below_:
 
-https://github.com/MaxineXiong/ACME-Work-Items-RPA/assets/55864839/f2f5b9a2-dfc6-401e-a301-a41155779279
+https://github.com/MaxineXiong/ACME-Work-Items-RPA/assets/55864839/f888b274-0316-4d24-a39f-fe1cb9753a8a
+
+
+
 
 
 
