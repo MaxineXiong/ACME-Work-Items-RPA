@@ -40,7 +40,9 @@ Constraints to follow in the development, using the **REFramework**:
 
 _You can check out the **automation demo video for the solution** below_:
 
-https://github.com/MaxineXiong/Invoice-Extraction-OCR-Challenge-RPA/assets/55864839/e9a608c4-1e0d-415d-a303-bd431ec71daf
+https://github.com/MaxineXiong/ACME-Work-Items-RPA/assets/55864839/f2f5b9a2-dfc6-401e-a301-a41155779279
+
+
 
 
 
