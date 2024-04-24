@@ -7,20 +7,36 @@
 
 <br/>
 
-This repository hosts an [UiPath](https://www.uipath.com/) automation solution designed to address the [RPA challenge of Invoice Extraction](https://rpachallengeocr.azurewebsites.net/) outlined in the requirements below.
+This repository hosts an [UiPath](https://www.uipath.com/) automation solution designed to address the **REFramework exercise** outlined in the requirements below.
 
-### **Instructions**
+## Instructions
 
-1. The goal of this challenge is to create a workflow that will read every table row and download the respective invoices.
-2. From the invoices, you will have to extract the **Invoice Number, Invoice Date, Company Name and Total Due** through **Optical Character Recognition (OCR)**.
-3. You will have to build and upload a CSV file with the data extracted from each invoice, the ID and Due Date from the table, **only for the invoices for which the Due Date has passed or is today**.
-4. The actual countdown of the challenge will begin once you click the **Start** button and will end once the CSV file is uploaded; until then, you may play around with the table on the right without receiving penalties.
-5. Below is the snapshot of an example CSV file in order to see the required format for the end result and two sample invoices. The formats of the invoices will be exactly as in the samples and they will not change. **The challenge
-   expects the uploaded CSV to be in the exact same format as the example CSV, including the formatting of the cells, and the rows should be in the same order as they appear in the table. Any difference will result in a failed challenge.**
+In this exercise, you will create a UiPath automation that performs the steps below.
 
+To achieve this, you will use the **[Robotic Enterprise Framework (REFramework)](https://docs.uipath.com/studio/standalone/2023.4/user-guide/robotic-enterprise-framework)** as the starting template and follow the UiPath development best practices.
 
-![image](https://github.com/MaxineXiong/Invoice-Extraction-OCR-Challenge-RPA/assets/55864839/06d96162-f67e-418c-b033-6fc11252daa7)
+Here are the steps performed by the **Robot**:
 
+1. Log on to https://www.acme-test.com
+2. On the landing page, Dashboard, click on the Work items menu item. Scrape the data in all the pages of the table, page by page, ensuring error handling and recovery.
+3. For each page:
+   - Filter the records where **Status** is ‘**Open**’;
+   - Filter the records where **Type** is ‘**WI2**’;
+   - Filter the records where **Date** is **newer** than **1st of January 2018** (discard older records);
+   - Append the resulting datatable from each page into an Excel worksheet; you shouldn’t worry about the headers and format of the output file.
+
+Constraints to follow in the development, using the **REFramework**:
+
+1. TransactionItem datatype should be a **String**. The process should **recover** and **retry 2 times** in case of errors in navigation between *WorkItems* pages. One transaction is the action of scraping one web page. By navigating to the next page, the next transaction will execute.
+2. Create a separate workflow file for the Login to ACME. File input arguments: *URL* \<String>; *Username* \<String>; *Password* \<SecureString>.
+3. Create a separate workflow file for closing ACME.
+4. Add the **ACME_URL** and **ACME_Credential** to the Excel Config file.
+5. Populate **InitAllApplications.xaml** from the Framework folder with Invoking the Login to ACME and navigation to the *Work Items*.
+6. Populate **CloseAllApplications.xaml** from the Framework folder with Invoking the Close ACME.
+7. Populate **KillAllProcesses.xaml** from the Framework folder with killing the process used.
+8. Populate the **Process.xaml** file with the following actions: *Web scraping*, *Filtering* and *Appending to Excel*.
+
+**Important Note**: Don’t use external file references outside of the project folder (including Orchestrator Assets). Place all the used files within the project folder only.
 
 _You can check out the **automation demo video for the solution** below_:
 
