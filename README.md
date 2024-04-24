@@ -13,7 +13,7 @@ This repository hosts an [UiPath](https://www.uipath.com/) automation solution d
 
 In this exercise, you will create a UiPath automation that performs the steps below.
 
-To achieve this, you will use the **[Robotic Enterprise Framework (REFramework)](https://docs.uipath.com/studio/standalone/2023.4/user-guide/robotic-enterprise-framework)** as the starting template and follow the UiPath development best practices.
+To achieve this, you will use the **[Robotic Enterprise Framework (REFramework)](https://docs.uipath.com/studio/standalone/2023.4/user-guide/robotic-enterprise-framework)** as the starting template and follow the [UiPath development best practices](Documentation/REFramework%20Documentation-EN.pdf).
 
 Here are the steps performed by the **Robot**:
 
